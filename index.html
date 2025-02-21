@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renan | Portfólio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="particulas"></div>
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Início</a>
+            </li>
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+            <li>
+                <a href="#projetos" class="menu-link">Projetos</a>
+            </li>
+            <li>
+                <a href="#contatos" class="menu-link">Contato</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+        <img src="./img/renan.jpeg" alt="Imagem de perfil" class="foto-perfil">
+        <h1>Renan Hugentobler</h1>
+        <p class="paragrafo-cabecalho">Desenvolvedor FullStack</p>
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">
+                Olá! Sou um jovem estudante de TI, apaixonado por tecnologia e pelas infinitas possibilidades de inovação que ela oferece. Estou sempre em busca de aprendizado e novas experiências para crescer na área e contribuir com soluções criativas.
+            </p>
+        </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo"> Meus Projetos </h2>
+        <div class="projetos-caixa">
+
+            <div class="projetos-card">
+                <img src="./img/calculadora.jpeg" alt="Projeto 1" class="projetos-img">
+                <div class="caixa-texto-projetos">
+
+                    <h3 class="info-projetos">Calculadora de IMC</h3>
+                    <p class="paragrafo-projetos">Este projeto é uma calculadora desenvolvida para auxiliar os usuários a descobrirem seu Índice de Massa Corporal (IMC). Com base na altura e no peso informados, o aplicativo calcula o IMC e indica a situação do usuário, ajudando a compreender melhor sua condição física.</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/QuizSenac.jpeg" alt="Projeto 2" class="projetos-img">
+                <div class="caixa-texto-projetos">
+                    <h3 class="info-projetos">Quiz Senac</h3>
+                    <p class="paragrafo-projetos">Este projeto é um aplicativo de quiz desenvolvido em parceria com o Senac, criado em colaboração com colegas da faculdade. O app tem como objetivo ajudar os usuários a descobrir sua forma de aprendizado por meio de testes interativos, além de oferecer outras funcionalidades voltadas para o autoconhecimento educacional.</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/Adoção.jpg" alt="Projeto 1" class="projetos-img">
+                <div class="caixa-texto-projetos">
+                    <h3 class="info-projetos">Adoção de Pets</h3>
+                    <p class="paragrafo-projetos">Este projeto é um site desenvolvido para facilitar a adoção de pets. A plataforma permite o cadastro de clientes interessados em adotar, além do registro de animais disponíveis para adoção e de seus donos temporários. Os usuários podem visualizar informações sobre os pets, entrar em contato com os responsáveis atuais e concluir o processo de adoção de forma segura e eficiente..</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulo">Entre em Contato</h2>
+        <form class="formulario-contatos" id="formulario" onsubmit="enviarWhats(event)">
+
+            <div class="grupo-form">
+                <input placeholder="Nome" class="campo-form" id="nome">
+            </div>
+ 
+            <div class="grupo-form">
+                 <textarea class="campo-form" placeholder="Digite sua Mensagem" rows="6" id="mensagem"></textarea>
+            </div>
+            <button type="submit" class="botao-form">Enviar via Whatsapp</button>
+        </form>
+    </section>
+    <script>
+        function enviarWhats(event){
+            event.preventDefault();
+
+            const nome = document.getElementById("nome").value;
+            const mensagem = document.getElementById("mensagem").value;
+            const telefone = "5551995847249"
+    
+            const texto = `Olá! Me chamo ${nome}, ${mensagem}`;
+            const mensagemFormatada = encodeURIComponent(texto);
+    
+            const url = `https://wa.me/${telefone}?text=${mensagemFormatada}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+
+</html>
